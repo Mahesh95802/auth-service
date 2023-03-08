@@ -12,9 +12,9 @@ app.use(express.json());
 app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+	res.send('Hello World!');
 });
 
 app.listen(PORT, () => {
-    console.log(`Server started on port: ${PORT}`);
+	console.log(`Server started on port: ${PORT}`);
 });

@@ -7,6 +7,6 @@ authRouter.post('/register', authValidator.registerValidator, authController.reg
 
 authRouter.post('/login', authValidator.loginValidator, authController.login);
 
-authRouter.get('/validate', authValidator.JWTValidator)
+authRouter.get('/verify', authController.verifyJWT);
 
 module.exports = authRouter;
