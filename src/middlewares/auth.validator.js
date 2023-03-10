@@ -13,7 +13,7 @@ const registerSchema = Joi.object({
 const loginValidator = (req, res, next) => {
 	const { error } = loginSchema.validate(req.body);
 	if (error) {
-		return res.status(400).json(error);
+		return res.status(400).json({ message: error.message });
 	}
 	next();
 };
@@ -21,7 +21,7 @@ const loginValidator = (req, res, next) => {
 const registerValidator = (req, res, next) => {
 	const { error } = registerSchema.validate(req.body);
 	if (error) {
-		return res.status(400).json(error);
+		return res.status(400).json({ message: error.message });
 	}
 	next();
 };

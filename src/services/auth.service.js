@@ -43,10 +43,10 @@ const login = async (body) => {
 
 const verifyJWT = async (token) => {
 	if (!token) throw new HTTPError(401, 'Invalid JWT');
-	const user = jwt.verify(token, process.env.JWT_SECRET)
+	const user = jwt.verify(token, process.env.JWT_SECRET);
 	const redisJWT = await redisUtil.getJWTFromRedis(token);
 	if (!redisJWT) throw new HTTPError(401, 'Invalid JWT');
-	return user
+	return user;
 	// return jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
 	// 	if(err) throw new HTTPError(401, 'Invalid JWT');
 	// 	const redisJWT = await redisUtil.getJWTFromRedis(token);

@@ -30,8 +30,9 @@ const verifyJWT = async (req, res) => {
 		const response = await authService.verifyJWT(token);
 		res.status(200).json(response);
 	} catch (err) {
-		if (err instanceof HTTPError) return res.status(err.statusCode).json({ message: err.message });
-		return res.status(500).json({ message: err.message });
+		// if (err instanceof HTTPError) return res.status(err.statusCode).json({ message: err.message });
+		// return res.status(500).json({ message: err.message });
+		return res.status(401).json({ message: err.message });
 	}
 };
 
